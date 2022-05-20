@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이건 디테일</title>
+  </head>
+  <body>
+    <h1>{{object_detail.title}}</h1>
+    <div>{{object_detail.content}}</div>
+    <div>오늘의 점수: {{object_detail.score}}</div>
+    <a href="{% url 'page-update' object_detail.id %}">수정하기</a>
+    <a href="{% url 'page-delete' object_detail.id%}">글 지우기</a>
+    <a href="{% url 'page-list' %}">돌아가기</a>
+    {% comment %} <img src="{% static 'Blog/images/달고나가 참 달고나.jpg' %}" alt="" / {% endcomment %}
+    width="130">
+  </body>
+</html>

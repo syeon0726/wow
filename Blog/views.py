@@ -23,7 +23,7 @@ def create(request):
             return redirect('page-read', page_id=form.id)
     else:
         form = PageForm()
-        return render(request, 'Blog/page_create.html', {'form': form})
+    return render(request, 'Blog/page_create.html', {'form': form})
 
 
 def update(request, page_id):

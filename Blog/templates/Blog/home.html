@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'Blog/css/style.css' %}">
+  </head>
+  <body>
+    <div>홈페이지</div>
+    
+    <h1><a href="{% url 'page-create' %}">만들기</a></h1>
+    {% if object_list %}
+<!--게시글이 있을 때-->
+    {% for obj in object_list %}
+        <h1>{{obj.title}}</h1>
+        <a href= {% url 'page-read' obj.id %}>자세히 보기</a>
+    {% endfor %}
+
+{% else %}
+<!--게시글이 없을 때-->
+    <div class="blank">
+        <p>보여줄 글이 없어요</p>
+        <br>작성ㄱㄱㄱㄱㄱㄱㄱ</br>
+        
+    </div>
+{% endif %}
+  </body>
+</html>

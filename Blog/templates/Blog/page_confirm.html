@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>삭제</title>
+  </head>
+  <body>
+    <form method="post">
+      {% csrf_token %}
+      <ul>
+        <li><input type="submit" value="지우기" /></li>
+        <li><a href="{% url 'page-read' object.id%}">돌아가기</a></li>
+      </ul>
+    </form>
+  </body>
+</html>
